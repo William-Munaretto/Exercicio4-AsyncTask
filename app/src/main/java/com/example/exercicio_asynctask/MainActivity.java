@@ -1,0 +1,38 @@
+package com.example.exercicio_asynctask;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Button btnProcessar;
+    private TextView txtStatus;
+    private TextView txtContador;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnProcessar = findViewById(R.id.btnProcessar);
+        txtStatus = findViewById(R.id.txtStatus);]
+        txtContador = findViewById(R.id.txtContador);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        ProcessarTask task = new ProcessarTask(btnProcessar,txtStatus,pgbProgresso);
+        pgbProgresso.setMax(15);
+        task.execute(15);
+
+    }
+
+
+}
