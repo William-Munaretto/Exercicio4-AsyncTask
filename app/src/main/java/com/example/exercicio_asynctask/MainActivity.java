@@ -21,17 +21,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         btnProcessar = findViewById(R.id.btnProcessar);
-        txtStatus = findViewById(R.id.txtStatus);]
+        txtStatus = findViewById(R.id.txtStatus);
         txtContador = findViewById(R.id.txtContador);
 
-    }
+        btnProcessar.setOnClickListener(this);
 
+    }
     @Override
     public void onClick(View view) {
-        ProcessarTask task = new ProcessarTask(btnProcessar,txtStatus,pgbProgresso);
-        pgbProgresso.setMax(15);
-        task.execute(15);
-
+        ProcessarTask task = new ProcessarTask(btnProcessar,txtStatus,txtContador);
+        task.execute(10);
     }
 
 
